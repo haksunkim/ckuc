@@ -1,0 +1,62 @@
+<div class="row">
+	<div id="home-slider" class="owl-carousel owl-theme" style="margin-top:0px;">
+		<div>
+			<%= image_tag("church-inside-1-2000X600.jpg", alt: t('home_title')) %>
+		</div>
+		<div>
+			<%= image_tag("church-inside-2-2000X600.jpg", alt: t('home_title')) %>
+		</div>
+		<div>
+			<%= image_tag("church-inside-3-2000X600.jpg", alt: t('home_title')) %>
+		</div>
+		<div>
+			<%= image_tag("church-inside-6-2000X600.jpg", alt: t('home_title')) %>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="col-md-12" align="center">
+		<h1 class="page-header"><%= t('home.title1') %></h1>
+	</div>
+	<div class="col-md-12" align="center">
+		<h3><%= t('home.title2') %></h3></br>
+	</div>
+	<div class="col-md-8 col-md-offset-2">
+		<div class="row">
+			<div class="col-md-6">
+				<!-- Nav tabs -->
+				<div class="card">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#sub_newcomer" aria-controls="sub_newcomer" role="tab" data-toggle="tab"><%= t('home.submenu.newcomer.title') %></a></li>
+					<li role="presentation"><a href="#sub_service" aria-controls="sub_service" role="tab" data-toggle="tab"><%= t('home.submenu.service.title') %></a></li>
+					<li role="presentation"><a href="#sub_news" aria-controls="sub_news" role="tab" data-toggle="tab"><%= t('home.submenu.news.title') %></a></li>
+					<li role="presentation"><a href="#sub_media" aria-controls="sub_media" role="tab" data-toggle="tab"><%= t('home.submenu.media.title') %></a></li>
+					<li role="presentation"><a href="#sub_countdown" aria-controls="sub_countdown" role="tab" data-toggle="tab"><%= t('home.submenu.countdown.title') %></a></li>
+					<li role="presentation"><a href="#sub_contact" aria-controls="sub_contact" role="tab" data-toggle="tab"><%= t('home.submenu.contact.title') %></a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="sub_newcomer"><%= raw(t('home.submenu.newcomer.content')) %></div>
+					<div role="tabpanel" class="tab-pane" id="sub_service"><%= raw(t('home.submenu.service.content')) %></div>
+					<div role="tabpanel" class="tab-pane" id="sub_news"><%= raw(t('home.submenu.news.content')) %></div>
+					<div role="tabpanel" class="tab-pane" id="sub_media"><%= raw(t('home.submenu.media.content')) %></div>
+					<div role="tabpanel" class="tab-pane" id="sub_countdown"><%= raw(t('home.submenu.countdown.content')) %></div>
+					<div role="tabpanel" class="tab-pane" id="sub_contact"><%= raw(t('home.submenu.contact.content')) %></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script language="JavaScript">
+	$(document).ready(function() {
+		// carousel
+		$("#home-slider").owlCarousel({
+			navigation : false, // Show next and prev buttons
+			slideSpeed : 300,
+			paginationSpeed : 400,
+			singleItem : true
+		});
+		$('#home-slider').trigger('owl.play', 10000);
+	});
+</script>

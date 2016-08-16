@@ -19,20 +19,20 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ko:
   hello: "Hello world"
   menu:
-    home: "HOME"
-    info: "Church Info"
-    service: "Services"
-    group: "Groups"
-    news: "News"
-    blog: "Blog"
+    home: "홈"
+    info: "교회소개"
+    service: "예배안내"
+    group: "소모임"
+    news: "교회뉴스"
+    blog: "블로그"
     contact: "Contact us"
-  home_title: "Calvary Korean Uniting Church"
+  home_title: "갈보리 한인 연합교회"
   home:
-    title1: "Church Information"
-    title2: "Service and Group Information"
+    title1: "우리교회안내"
+    title2: "교회 예배 및 모임 안내"
     submenu:
       newcomer:
         title: "새신자 안내"
@@ -54,11 +54,11 @@ en:
         content: "담임목사: 정재권<br/><i class='fa fa-mobile'></i> 0424 991 017<br/><i class='fa fa-envelope-o'></i> info@ckuc.org.au<br/><i class='fa fa-map-marker'></i> 481 Broadwater Road<br/>Mansfield QLD 4122"
   footer:
     focus:
-      title: "Focus"
+      title: "목회중점"
       content: "1. 구별된 예배 공동체 (롬 12:1 ~ 2)<br/>2. 돌봄과 충만한 은사공동체 (롬 12:8 ~ 13)<br/>3. 선을 행하는 사랑의 공동체 (롬 12:14 ~ 21)"
     schedule:
-      title: "Service Time"
+      title: "예배시간"
       content: "<li>주일예배: 주일 오후 12 시 (본당)</li><li>주일학교 예배: 주일 오후 12 시 (강당)</li><li>Youth 예배: 주일 오후 12 시 (소예배실)</li><li>새벽예배: 화 - 목 오전 5 시 30 분 (소예배실)</li><li>금요집회: 금요일 저녁 8 시 (소예배실)</li><li>청년부예배: 주일오후 2시 30분 (소예배실)</li>"
     contact:
-      title: "Contact"
+      title: "연락처"
       content: "담임목사: 정재권<br/><i class='fa fa-mobile'></i> 0424 991 017<br/><i class='fa fa-envelope-o'></i> info@ckuc.org.au<br/><i class='fa fa-map-marker'></i> 481 Broadwater Road<br/>Mansfield QLD 4122"
