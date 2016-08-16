@@ -1,6 +1,7 @@
 <div class="container">
-  
-  <h2 align="center"><%= t('about.main.title') %></h2><br/>
+  <h2 align="center"><%= t('about.main.title') %></h2>
+</div>
+<div class="container">
   <ul class="list-group">
     <% for i in 1..5 %>
     <li class="list-group-item">
@@ -13,9 +14,7 @@
       <div id=<%= "detail-#{i}" %>>
         <hr></hr>
         <div class="container">
-        <div class="col-xs-10 col-xs-offset-1">
           <%= raw(t("about.main.menu.content#{i}")) %>
-        </div>
         </div>
       </div>
     </li>
