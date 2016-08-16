@@ -34,9 +34,6 @@
 						<li>
 							<%= link_to icon('envelope-o')+' '+t('menu.contact'), contact_path(:params => { locale: params[:locale] }) %>
 						</li>
-						
-					</ul>
-					<ul class="nav navbar-nav navbar-right" style="font-size:1.1em;">
 						<li>
 							<% if I18n.locale != I18n.default_locale %>
 							<%= link_to "English", :locale=>'en'%>
