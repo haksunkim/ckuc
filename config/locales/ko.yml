@@ -23,7 +23,7 @@ ko:
   hello: "Hello world"
   menu:
     home: "홈"
-    info: "교회소개"
+    about: "교회소개"
     service: "예배안내"
     group: "소모임"
     news: "교회뉴스"

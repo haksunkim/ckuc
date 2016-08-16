@@ -13,11 +13,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-left" style="font-size:1.1em;">
-						<li class="active">
+						<li id="nav_home">
 							<%= link_to icon('home')+' '+t('menu.home'), root_path(:params => { locale: params[:locale] }) %>
 						</li>
-						<li>
-							<%= link_to icon('info')+' '+t('menu.info'), about_path(:params => { locale: params[:locale] }) %>
+						<li id="nav_info">
+							<%= link_to icon('info')+' '+t('menu.about'), about_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>
 							<%= link_to icon('calendar-o')+' '+t('menu.service'), about_path(:params => { locale: params[:locale] }) %>
