@@ -1,20 +1,20 @@
 <div class="container">
-  <h2 align="center"><%= t('about.main.title') %></h2>
+  <h2 align="center"><%= t('about.title') %></h2>
 </div>
 <div class="container">
   <ul class="list-group">
-    <% for i in 1..5 %>
+    <% for i in 1..@item_count %>
     <li class="list-group-item">
       <div class="row toggle" id=<%= "dropdown-detail-#{i}" %> data-toggle=<%= "detail-#{i}" %>>
         <div class="col-xs-10">
-          <%= t("about.main.menu.item#{i}") %>
+          <%= t("about.list.item#{i}.title") %>
         </div>
         <div class="col-xs-2"><%= icon('chevron-down pull-right') %></div>
       </div>
       <div id=<%= "detail-#{i}" %>>
         <hr></hr>
         <div class="container">
-          <%= raw(t("about.main.menu.content#{i}")) %>
+          <%= raw(t("about.list.item#{i}.content")) %>
         </div>
       </div>
     </li>

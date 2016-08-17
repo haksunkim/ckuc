@@ -45,7 +45,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.6.2'
 gem 'owlcarousel-rails'
 
-
+# Internationalization
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
+gem 'i18n-active_record', :require => 'i18n/active_record'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

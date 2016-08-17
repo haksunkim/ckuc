@@ -1,64 +1,75 @@
 <div class="row">
-	<div id="home-slider" class="owl-carousel owl-theme">
-		<div class="item">
-			<%= image_tag("church-inside-1-2000X600.jpg", alt: t('home_title')) %>
-		</div>
-		<div class="item">
-			<%= image_tag("church-inside-2-2000X600.jpg", alt: t('home_title')) %>
-		</div>
-		<div class="item">
-			<%= image_tag("church-inside-3-2000X600.jpg", alt: t('home_title')) %>
-		</div>
-		<div class="item">
-			<%= image_tag("church-inside-6-2000X600.jpg", alt: t('home_title')) %>
-		</div>
-	</div>
+  <div id="home-slider" class="owl-carousel owl-theme">
+    <div class="item">
+      <%= image_tag("church-inside-1-2000X600.jpg", alt: t('page.title')) %>
+    </div>
+    <div class="item">
+      <%= image_tag("church-inside-2-2000X600.jpg", alt: t('page.title')) %>
+    </div>
+    <div class="item">
+      <%= image_tag("church-inside-3-2000X600.jpg", alt: t('page.title')) %>
+    </div>
+    <div class="item">
+      <%= image_tag("church-inside-6-2000X600.jpg", alt: t('page.title')) %>
+    </div>
+  </div>
 </div>
 <div class="container">
-	<div class="col-md-12" align="center">
-		<h1 class="page-header"><%= t('home.title1') %></h1>
-	</div>
-	<div class="col-md-12" align="center">
-		<h3><%= t('home.title2') %></h3></br>
-	</div>
-	<div class="col-md-8 col-md-offset-2">
-		<div class="row">
-			<div class="col-md-12">
-				<!-- Nav tabs -->
-				<div class="card">
-				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#sub_newcomer" aria-controls="sub_newcomer" role="tab" data-toggle="tab"><%= t('home.submenu.newcomer.title') %></a></li>
-					<li role="presentation"><a href="#sub_service" aria-controls="sub_service" role="tab" data-toggle="tab"><%= t('home.submenu.service.title') %></a></li>
-					<li role="presentation"><a href="#sub_news" aria-controls="sub_news" role="tab" data-toggle="tab"><%= t('home.submenu.news.title') %></a></li>
-					<li role="presentation"><a href="#sub_media" aria-controls="sub_media" role="tab" data-toggle="tab"><%= t('home.submenu.media.title') %></a></li>
-					<li role="presentation"><a href="#sub_countdown" aria-controls="sub_countdown" role="tab" data-toggle="tab"><%= t('home.submenu.countdown.title') %></a></li>
-					<li role="presentation"><a href="#sub_contact" aria-controls="sub_contact" role="tab" data-toggle="tab"><%= t('home.submenu.contact.title') %></a></li>
-				</ul>
+  <div class="col-md-12" align="center">
+    <h1 class="page-header"><%= t('home.title') %></h1>
+  </div>
+  <div class="col-md-12" align="center">
+    <h3><%= t('home.subtitle') %></h3></br>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Nav tabs -->
+        <div class="card">
+          <ul class="nav nav-tabs" role="tablist">
+            <% if @item_count >= 1 %>
+            <li role="presentation" class="active">
+              <a href="#sub_item1" aria-controls="sub_item1" role="tab" data-toggle="tab"><%= t('home.tab.item1.title') %></a>
+            </li>
+            <% end %>
+            <% if @item_count > 1 %>
+            <% for i in 2..@item_count %>
+            <li role="presentation">
+              <a href="#sub_item<%= i %>" aria-controls="sub_item<%= i %>" role="tab" data-toggle="tab"><%= t("home.tab.item#{i}.title") %></a>
+            </li>
+            <% end %>
+            <% end %>
+          </ul>
 
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div role="tabpanel" class="tab-pane active" id="sub_newcomer"><%= raw(t('home.submenu.newcomer.content')) %></div>
-					<div role="tabpanel" class="tab-pane" id="sub_service"><%= raw(t('home.submenu.service.content')) %></div>
-					<div role="tabpanel" class="tab-pane" id="sub_news"><%= raw(t('home.submenu.news.content')) %></div>
-					<div role="tabpanel" class="tab-pane" id="sub_media"><%= raw(t('home.submenu.media.content')) %></div>
-					<div role="tabpanel" class="tab-pane" id="sub_countdown"><%= raw(t('home.submenu.countdown.content')) %></div>
-					<div role="tabpanel" class="tab-pane" id="sub_contact"><%= raw(t('home.submenu.contact.content')) %></div>
-				</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <% if @item_count >= 1 %>
+            <div role="tabpanel" class="tab-pane active" id="sub_item1">
+              <%= raw(t('home.tab.item1.content')) %>
+            </div>
+            <% end %>
+            <% if @item_count > 1 %>
+              <% for i in 2..@item_count %>
+              <div role="tabpanel" class="tab-pane" id="sub_item<%= i %>">
+                <%= raw(t("home.tab.item#{i}.content")) %>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script language="JavaScript">
-	$(document).ready(function() {
-		// carousel
-		$("#home-slider").owlCarousel({
-			navigation : false, // Show next and prev buttons
-			slideSpeed : 300,
-			paginationSpeed : 400,
-			singleItem : true
-		});
-		$('#home-slider').trigger('owl.play', 10000);
-		
-	});
+  $(document).ready(function() {
+    // carousel
+    $("#home-slider").owlCarousel({
+      navigation : false, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem : true
+    });
+    $('#home-slider').trigger('owl.play', 10000);
+  }); 
 </script>

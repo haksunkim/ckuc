@@ -14,25 +14,25 @@
         <div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-left" style="font-size:1.1em;">
 						<li id="nav_home">
-							<%= link_to icon('home')+' '+t('menu.home'), root_path(:params => { locale: params[:locale] }) %>
+							<%= link_to icon('home')+' '+t('header.menu.home'), root_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li id="nav_info">
-							<%= link_to icon('info')+' '+t('menu.about'), about_path(:params => { locale: params[:locale] }) %>
+							<%= link_to icon('info')+' '+t('header.menu.about'), about_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>
-							<%= link_to icon('calendar-o')+' '+t('menu.service'), about_path(:params => { locale: params[:locale] }) %>
+							<%= link_to icon('calendar-o')+' '+t('header.menu.service'), about_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>
-							<%= link_to icon('group')+' '+t('menu.group'), about_path(:params => { locale: params[:locale] }) %>
+							<%= link_to icon('group')+' '+t('header.menu.group'), about_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>
-							<%= link_to icon('newspaper-o')+' '+t('menu.news'), about_path(:params => { locale: params[:locale] }) %>
+							<%= link_to icon('newspaper-o')+' '+t('header.menu.news'), about_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>
-							<%= link_to icon('bold')+' '+t('menu.blog'), about_path(:params => { locale: params[:locale] }) %>
+							<%= link_to icon('bold')+' '+t('header.menu.blog'), about_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>
-							<%= link_to icon('envelope-o')+' '+t('menu.contact'), contact_path(:params => { locale: params[:locale] }) %>
+							<%= link_to icon('envelope-o')+' '+t('header.menu.contact'), contact_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>
 							<% if I18n.locale != I18n.default_locale %>

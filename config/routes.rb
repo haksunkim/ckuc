@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :locales do
+    resources :translations, constraints: { :id => /[^\/]+/ }
+  end
+
   root to: 'static_pages#home'
 
   get '/about', to: 'static_pages#about', as: 'about'
