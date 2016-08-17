@@ -36,7 +36,11 @@
 							<%= link_to icon('newspaper-o')+' '+t('header.menu.news'), about_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>
-							<%= link_to icon('bold')+' '+t('header.menu.blog'), about_path(:params => { locale: params[:locale] }) %>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('header.menu.blog') %><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><%= link_to t('header.menu.article'), "#" %></li>
+							  <li><%= link_to t('header.menu.gallery'), "#" %></li>
+							</ul>
 						</li>
 						<li>
 							<%= link_to icon('envelope-o')+' '+t('header.menu.contact'), contact_path(:params => { locale: params[:locale] }) %>
