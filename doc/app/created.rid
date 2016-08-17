@@ -1,0 +1,11 @@
+Wed, 17 Aug 2016 14:15:37 +1000
+README.rdoc	Tue, 16 Aug 2016 12:05:06 +1000
+app/controllers/application_controller.rb	Tue, 16 Aug 2016 14:09:49 +1000
+app/controllers/static_pages_controller.rb	Wed, 17 Aug 2016 14:10:58 +1000
+app/controllers/translations_controller.rb	Wed, 17 Aug 2016 14:10:58 +1000
+app/helpers/application_helper.rb	Tue, 16 Aug 2016 12:05:06 +1000
+app/helpers/static_pages_helper.rb	Tue, 16 Aug 2016 14:09:49 +1000
+app/helpers/translations_helper.rb	Wed, 17 Aug 2016 14:10:58 +1000
+app/models/role.rb	Tue, 16 Aug 2016 12:24:51 +1000
+app/models/translation.rb	Wed, 17 Aug 2016 14:10:58 +1000
+app/models/user.rb	Tue, 16 Aug 2016 12:25:15 +1000
