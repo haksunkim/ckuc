@@ -34,6 +34,9 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "lightbox-bootstrap";
 
 body {
   padding-top:50px;
@@ -158,4 +161,8 @@ body {
 
 #logo-container img {
    height: auto;
+}
+
+.alert-notice {
+  @extend .alert-success;
 }

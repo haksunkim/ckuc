@@ -54,7 +54,10 @@ gem "wysiwyg-rails"
 
 # file upload manager
 gem 'carrierwave'
+gem 'mini_magick'
 
+# lightbox
+gem 'lightbox-bootstrap-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

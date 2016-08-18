@@ -1,0 +1,19 @@
+<div class="container" style="padding-bottom:10px;">
+  <div class="col-md-12">
+    <h1>Listing Photos</h1>
+  </div>
+  <div class="col-md-12 col-xs-12">
+    <%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
+  </div>
+  <% @photos.each do |p| %>
+  <div class="col-md-2 col-xs-3" align="center">
+    <%= image_tag p.photo.thumb.url, alt: p.tag, style: "width:100%;height:auto;" %>
+    <%= raw("<br/>#{p.tag}") if p.tag? %>
+    <br/>
+    <%= link_to 'Show', p %>
+    <%= link_to 'Edit', edit_photo_path(p) %>
+    <%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <% end %>  
+</div>
+

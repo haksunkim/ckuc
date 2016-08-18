@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/gallery', to: 'gallery#index', as: 'gallery' 
+
   resources :locales do
     resources :translations, constraints: { :id => /[^\/]+/ }
   end
@@ -14,5 +16,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   
+  resources :photos
   
 end

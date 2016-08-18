@@ -39,7 +39,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('header.menu.blog') %><span class="caret"></span></a>
 							<ul class="dropdown-menu">
 							  <li><%= link_to t('header.menu.article'), "#" %></li>
-							  <li><%= link_to t('header.menu.gallery'), "#" %></li>
+							  <li><%= link_to t('header.menu.gallery'), gallery_path(:params => { locale: params[:locale] }) %></li>
 							</ul>
 						</li>
 						<li>

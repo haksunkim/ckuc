@@ -43,3 +43,4 @@
 //= require plugins/table.min.js
 //= require plugins/url.min.js
 //= require plugins/video.min.js
+//= require lightbox-bootstrap

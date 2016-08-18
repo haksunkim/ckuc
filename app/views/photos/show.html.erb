@@ -1,0 +1,7 @@
+<div class="container" align="center" style="padding-bottom:10px;">
+  <%= image_tag @photo.photo_url, alt: @photo.tag %>
+  <%= raw("<br/>#{@photo.tag}")%>
+  <br/>
+  <%= link_to 'Edit', edit_photo_path(@photo), class: "btn btn-primary" %>
+  <%= link_to 'Back', photos_path, class: "btn btn-default" %>
+</div>
