@@ -17,3 +17,4 @@
 /tmp
 /*.pid
 /*.pid.lock
+/public/uploads/*
