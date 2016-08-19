@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get '/gallery', to: 'gallery#index', as: 'gallery' 
-
-  resources :locales do
-    resources :translations, constraints: { :id => /[^\/]+/ }
+  get 'admin', to: 'admin#home', as: 'admin'
+  scope '/admin' do
+    resources :photos
+    resources :locales do
+      resources :translations, constraints: { :id => /[^\/]+/ }
+    end
   end
+  get '/gallery', to: 'gallery#index', as: 'gallery' 
 
   root to: 'static_pages#home'
 
@@ -15,7 +18,5 @@ Rails.application.routes.draw do
   get 'news', to: 'static_pages#news', as: 'news'
 
   devise_for :users
-  
-  resources :photos
   
 end
