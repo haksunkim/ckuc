@@ -1,30 +1,37 @@
-<div class="container">
-<h1>Translations for <%= @locale %></h1>
+<!--div class="container"-->
+  <h1>Translations for <%= @locale %></h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Translation Key</th>
-      <th>Setting</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% translation_keys(@locale).each do |key| %>
-      <% translation = translation_for_key(@translations, key) %>
-      <tr id="<%= key %>">
-        <td><%= key %></td>
-        <td><%= truncate(translation.nil? ? I18n.t(key, locale: @locale) : translation.value, length: 50, separator: " ", omission: " ...(more)") %></td>
-        <td>
-          <% if translation.nil? %>
-            <%= link_to "Edit", new_locale_translation_url(@locale, key: key) %>
-          <% else %>
-            <%= link_to "Edit", edit_locale_translation_url(@locale, translation) %>
-            <%= link_to "Reset", locale_translation_url(@locale, translation), method: :delete, data: { confirm: "Are you sure?" } %>
-          <% end %>
-        </td>
-      </tr>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <% @translation = Translation.new(locale: @locale) %>
+    <%= form_for @translation, url: locale_translations_path(:params => { key: params[:key] }), html: { class: "form-horizontal center" } do |form| %>
+    <%= form.label :locale, class: "control-label" %> <%= form.text_field :locale, readonly: true, class: "form-control" %>
+    <%= form.label :key, class: "control-label" %> <%= form.text_field :key, class: "form-control" %>
+    <%= form.label :value, class: "control-label" %> <%= form.text_area :value, value: I18n.t(@translation.key, locale: @locale), class: "form-control" %>
+    <%= form.submit 'Save Translation', class: "btn btn-default btn-primary" %> <%= link_to "Cancel", locale_translations_url(@locale), class: "btn btn-warning" %>
     <% end %>
-  </tbody>
-</table>
-</div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Translation Key</th>
+        <th>Setting</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @translations.each do |translation| %>
+      <tr id="<%= translation.key %>">
+        <td><%= translation.key %></td>
+        <td><%= truncate(translation.nil? ? I18n.t(translation.key, locale: @locale) : translation.value, length: 50, separator: " ", omission: " ...(more)") %></td>
+        <td> <% if translation.nil? %>
+        <%= link_to "Edit", new_locale_translation_url(@locale, key: translation.key) %>
+        <% else %>
+        <%= link_to "Edit", edit_locale_translation_url(@locale, translation) %>
+        <%= link_to "Reset", locale_translation_url(@locale, translation, :params => { key: params[:key] }), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<!--/div-->

@@ -2,9 +2,14 @@ class TranslationsController < ApplicationController
   before_filter :find_locale
   before_filter :retrieve_key, only: [:create, :update]
   before_filter :find_translation, only: [:edit, :update]
-
+  layout 'admin'
+  
   def index
-    @translations = Translation.locale(@locale)
+    if params.key?("key")
+      @translations = Translation.where("locale = ? AND key LIKE ?", @locale, params[:key]+'%')
+    else
+      @translations = Translation.locale(@locale)
+    end
   end
 
   def new
@@ -20,7 +25,7 @@ class TranslationsController < ApplicationController
       if @translation.save
         flash[:success] = "Translation for #{ @key } updated."
         I18n.backend.reload!
-        redirect_to locale_translations_url(@locale)
+        redirect_to locale_translations_url(@locale, :params => { key: params[:key] })
       else
         render :new
       end
@@ -43,7 +48,7 @@ class TranslationsController < ApplicationController
   def destroy
     Translation.destroy(params[:id])
     I18n.backend.reload!
-    redirect_to locale_translations_url(@locale)
+    redirect_to locale_translations_url(@locale, :params => { key: params[:key] })
   end
 
   private
