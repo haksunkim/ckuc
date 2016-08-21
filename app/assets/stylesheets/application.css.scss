@@ -166,3 +166,10 @@ body {
 .alert-notice {
   @extend .alert-success;
 }
+#error_explanation {
+  @extend .alert;
+  @extend .alert-danger;
+  h2 {
+    font-size:1.0em;
+  }
+}
