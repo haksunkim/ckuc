@@ -27,4 +27,8 @@ class StaticPagesController < ApplicationController
   def blog
     @articles = Article.all
   end
+  
+  def gallery
+    @photos = Photo.all
+  end
 end
