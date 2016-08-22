@@ -1,0 +1,9 @@
+<div class="container">
+  <% @articles.each do |article| %>
+    <h4><%= article.subject %><small> created at: <%= article.created_at.strftime "%d/%m/%y %I:%M:%p" %></small></h4>
+    <hr></hr>
+    <div class="fr-view" style="padding-bottom:20px;">
+      <%= raw(article.content) %>
+    </div>
+  <% end %>
+</div>

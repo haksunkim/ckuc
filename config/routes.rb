@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'service_into', to: 'static_pages#service_info', as: 'service_info'
   get '/groups', to: 'static_pages#groups', as: 'groups'
   get 'news', to: 'static_pages#news', as: 'news'
+  get 'blog', to: 'static_pages#blog', as: 'blog'
 
   devise_for :users
   

@@ -23,4 +23,8 @@ class StaticPagesController < ApplicationController
 
   def news
   end
+  
+  def blog
+    @articles = Article.all
+  end
 end
