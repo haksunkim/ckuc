@@ -1,0 +1,26 @@
+<% if !notice.nil? %>
+<p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
+<h1>Listing Articles <small><%= link_to icon('pencil-square-o'), new_article_path %></small></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Created at</th>
+      <th>Modified at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.subject, article %></td>
+        <td><%= article.created_at.strftime "%d/%m/%Y %I:%M:%p" %></td>
+        <td><%= article.updated_at.strftime "%d/%m/%Y %I:%M:%p" %></td>
+        <td><%= link_to icon('edit'), edit_article_path(article) %>&nbsp;&nbsp;
+        <%= link_to icon('trash'), article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

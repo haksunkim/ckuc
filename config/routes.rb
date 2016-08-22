@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :locales do
       resources :translations, constraints: { :id => /[^\/]+/ }
     end
+    resources :articles
   end
   get '/gallery', to: 'gallery#index', as: 'gallery' 
 
