@@ -12,6 +12,30 @@
         <ul class="list-group">
           <li class="list-group-item">
             <%= icon('home', class: "text-primary") %>
+            <%= link_to "Header", "#" %>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <%= icon('pencil-square-o', class: "text-primary") %> <%= link_to "Korean", locale_translations_url('ko', params: {key: 'header' }) %>
+              </li>
+              <li class="list-group-item">
+                <%= icon('pencil-square-o', class: "text-primary") %> <%= link_to "English", locale_translations_url('en', params: {key: 'header' }) %>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <%= icon('home', class: "text-primary") %>
+            <%= link_to "Footer", "#" %>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <%= icon('pencil-square-o', class: "text-primary") %> <%= link_to "Korean", locale_translations_url('ko', params: {key: 'footer' }) %>
+              </li>
+              <li class="list-group-item">
+                <%= icon('pencil-square-o', class: "text-primary") %> <%= link_to "English", locale_translations_url('en', params: {key: 'footer' }) %>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <%= icon('home', class: "text-primary") %>
             <%= link_to "Home Page", "#" %>
             <ul class="list-group">
               <li class="list-group-item">
@@ -35,8 +59,8 @@
             </ul>
           </li>
           <li class="list-group-item">
-            <%= icon('envelope-o') %>
-            <%= link_to "Contact", "#" %>
+            <%=  %>
+            <%= link_to icon('envelope-o')+" Contact", "#" %>
             <ul class="list-group">
               <li class="list-group-item">
                 <%= icon('pencil-square-o', class: "text-primary") %> <%= link_to "Korean", locale_translations_url('ko', params: {key: 'contact' }) %>

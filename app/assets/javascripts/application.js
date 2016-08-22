@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ckeditor/init
 //= require turbolinks
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
 //= require owl.carousel
-//= require ckeditor/init
