@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create(username: "haksun.kim", email: "iam@haksunkim.com", password: "password", password_confirmation: "password")
 User.create(username: "uniqpark", email: "uniqpark@naver.com", password: "password", password_confirmation: "password")
-
 Translation.create(locale: "en", key: "about.list.item1.content", value: "우리교회는 하나님께서 인도하시는 비전이 되도록 깊이 있는 내면적인 영성훈련과 기도' 그리고 '교회 공동체 구성원의 마음과 비전' 이 함께 담아지는 교회 입니다.")
 Translation.create(locale: "en", key: "about.list.item1.title", value: "교회의 Vision")
 Translation.create(locale: "en", key: "about.list.item2.content", value: "2006년 6월 4일 은혜와 선교교회로 시작함.<br/>2006년 9월 17일 써니뱅크 연합교회와 함께 한인교회로 다민족/다문화 목회 사역에 동참함.<br/>2009년 12월 1일 크로스웨이 연합교회로<br/>2013년 3월 31일 갈보리한인연합교회로<br/>2014년 9월 1 대 담임목사 김동원 목사 사임<br/>2015년 10월 25일 2대 담임목사 정재권 목사 취임")
