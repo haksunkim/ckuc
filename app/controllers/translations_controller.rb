@@ -2,6 +2,7 @@ class TranslationsController < ApplicationController
   before_filter :find_locale
   before_filter :retrieve_key, only: [:create, :update]
   before_filter :find_translation, only: [:edit, :update]
+  before_action :authenticate_user!
   layout 'admin'
   
   def index
