@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create(usename: "haksun.kim", email: "iam@haksunkim.com", password: "password", password_confirmation: "password")
-User.create(usename: "uniqpark", email: "uniqpark@naver.com", password: "password", password_confirmation: "password")
+User.create(username: "haksun.kim", email: "iam@haksunkim.com", password: "password", password_confirmation: "password")
+User.create(username: "uniqpark", email: "uniqpark@naver.com", password: "password", password_confirmation: "password")
 
 Translation.create(locale: "en", key: "about.list.item1.content", value: "우리교회는 하나님께서 인도하시는 비전이 되도록 깊이 있는 내면적인 영성훈련과 기도' 그리고 '교회 공동체 구성원의 마음과 비전' 이 함께 담아지는 교회 입니다.")
 Translation.create(locale: "en", key: "about.list.item1.title", value: "교회의 Vision")
