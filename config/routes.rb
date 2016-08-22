@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   get 'admin', to: 'admin#home', as: 'admin'
   scope '/admin' do
     resources :photos

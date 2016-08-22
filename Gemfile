@@ -50,7 +50,8 @@ gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'i18n-active_record', :require => 'i18n/active_record'
 
 # wysiwyg editor
-gem "wysiwyg-rails"
+# gem "wysiwyg-rails"
+gem 'ckeditor'
 
 # file upload manager
 gem 'carrierwave'
