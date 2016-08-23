@@ -1,12 +1,17 @@
 <%= form_for @translation, url: locale_translation_path, html: { class: "form-horizontal center" } do |form| %>
-<%= form.label :locale, class: "control-label" %> <%= form.text_field :locale, readonly: true, class: "form-control" %>
-<%= form.label :key, class: "control-label" %> <%= form.text_field :key, readonly: true, class: "form-control" %>
-<%= form.label :value, class: "control-label" %> 
-<% if @translation.key.last(7) === "content" %>
-  <%= form.cktext_area :value, class: "form-control", ckeditor: { language: @translation.locale, toolbar: 'mini' } %>
-<% else %>
-  <%= form.text_area :value, class: "form-control" %>
-<% end %>
-
-<%= form.submit 'Save Translation', class: "btn btn-default btn-primary" %> <%= link_to "Cancel", locale_translations_url(@locale), class: "btn btn-warning" %>
+<div class="form-group">
+  <%= form.label :locale, class: "control-label" %> <%= form.text_field :locale, readonly: true, class: "form-control" %>
+  <%= form.label :key, class: "control-label" %> <%= form.text_field :key, readonly: true, class: "form-control" %>
+  <%= form.label :value, class: "control-label" %>
+  <div>
+    <% if @translation.key.last(7) === "content" %>
+    <%= form.cktext_area :value, class: "form-control", ckeditor: { language: @translation.locale, toolbar: 'mini' } %>
+    <% else %>
+    <%= form.text_area :value, class: "form-control" %>
+    <% end %>
+  </div>
+</div>
+<div class="form-group">
+  <%= form.submit 'Save Translation', class: "btn btn-default btn-primary" %> <%= link_to "Cancel", locale_translations_url(@locale, params: { key: params[:key] }), class: "btn btn-default" %>
+</div>
 <% end %>

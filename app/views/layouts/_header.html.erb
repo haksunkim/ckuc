@@ -13,10 +13,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-left" style="font-size:1.1em;">
-						<li id="nav_home">
+						<li>
 							<%= link_to icon('home')+' '+t('header.menu.home'), root_path(:params => { locale: params[:locale] }) %>
 						</li>
-						<li id="nav_info">
+						<li>
 							<%= link_to icon('info')+' '+t('header.menu.about'), about_path(:params => { locale: params[:locale] }) %>
 						</li>
 						<li>

@@ -40,7 +40,7 @@ class TranslationsController < ApplicationController
     if @translation.update(translation_params)
       flash[:notice] = "Translation for #{ @key } updated."
       I18n.backend.reload!
-      redirect_to locale_translations_url(@locale)
+      redirect_to locale_translations_url(@locale, :params => { key: params[:key] })
     else
       render :edit
     end

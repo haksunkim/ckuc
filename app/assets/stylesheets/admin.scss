@@ -1,4 +1,15 @@
- body{margin:50px;}
+/*
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "common";
+ 
+body{margin:50px;}
       #accordion .glyphicon { margin-right:10px; }
       .panel-collapse>.list-group .list-group-item:first-child {border-top-right-radius: 0;border-top-left-radius: 0;}
       .panel-collapse>.list-group .list-group-item {border-width: 1px 0;}
