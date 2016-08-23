@@ -5,7 +5,7 @@
   <%= form.label :value, class: "control-label" %>
   <div>
     <% if @translation.key.last(7) === "content" %>
-    <%= form.cktext_area :value, class: "form-control", ckeditor: { language: @translation.locale, toolbar: 'mini' } %>
+    <%= form.cktext_area :value, class: "form-control", ckeditor: { language: @translation.locale, toolbar: 'full' } %>
     <% else %>
     <%= form.text_area :value, class: "form-control" %>
     <% end %>
