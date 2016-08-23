@@ -3,6 +3,7 @@ class TranslationsController < ApplicationController
   before_filter :retrieve_key, only: [:create, :update]
   before_filter :find_translation, only: [:edit, :update]
   before_action :authenticate_user!
+  before_action :authorize_user
   layout 'admin'
   
   def index
@@ -73,5 +74,12 @@ class TranslationsController < ApplicationController
 
   def default_translation_value
     I18n.t(@translation.key, locale: @locale)
+  end
+  
+  def authorize_user
+    if !current_user.has_role? :admin
+      flash[:alert] = "You need Admin privilege to update Content"
+      redirect_to admin_path
+    end
   end
 end

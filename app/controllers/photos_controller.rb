@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :authorize_user
   layout 'admin'
   # GET /photos
   # GET /photos.json
@@ -71,5 +72,12 @@ class PhotosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
       params.fetch(:photo, {}).permit(:album,:tag,:photo)
+    end
+    
+    def authorize_user
+      if !current_user.has_role? :admin, Photo
+        flash[:alert] = "You need Admin privilege to update Photos"
+        redirect_to admin_path
+      end
     end
 end

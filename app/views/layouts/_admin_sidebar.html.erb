@@ -1,6 +1,7 @@
 <!-- source: http://bootsnipp.com/snippets/featured/accordion-list-group-menu -->
 <div class="col-sm-3 col-md-3">
   <div class="panel-group" id="accordion">
+    <% if current_user.has_role? :admin %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -8,7 +9,7 @@
           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Content</a>
         </h4>
       </div>
-      <div id="collapseOne" class="panel-collapse collapse in">
+      <div id="collapseOne" class="panel-collapse collapse">
         <ul class="list-group">
           <li class="list-group-item">
             <%= icon('home', class: "text-primary") %>
@@ -71,8 +72,10 @@
             </ul>
           </li>
         </ul>
-      </div>
+      </div>      
     </div>
+    <% end %>  
+    <% if (current_user.has_role? :admin, Photo) || (current_user.has_role? :admin, Article) %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -82,10 +85,11 @@
       </div>
       <div id="collapseTwo" class="panel-collapse collapse">
         <div class="list-group">
-          <%= link_to icon('comments-o')+' Articles', articles_path, class: "list-group-item" %>
-          <%= link_to icon('picture-o')+' Photos', photos_path, class: "list-group-item" %>
+          <%= link_to icon('comments-o')+' Articles', articles_path, class: "list-group-item" if current_user.has_role? :admin, Article %>
+          <%= link_to icon('picture-o')+' Photos', photos_path, class: "list-group-item" if current_user.has_role? :admin, Photo %>
         </div>
       </div>
     </div>
+    <% end %>
   </div>
 </div>

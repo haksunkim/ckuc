@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :authorize_user
   layout 'admin'
   # GET /articles
   # GET /articles.json
@@ -71,5 +72,12 @@ class ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.fetch(:article, {}).permit(:subject,:content)
+    end
+    
+    def authorize_user
+      if !current_user.has_role? :admin, Article
+        flash[:alert] = "You need Admin privilege to update Article"
+        redirect_to admin_path
+      end
     end
 end

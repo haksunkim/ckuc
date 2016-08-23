@@ -39,6 +39,7 @@ gem 'devise'
 
 # authorization with Rolify
 gem "rolify"
+gem "cancancan"
 
 # styling
 gem 'bootstrap-sass', '~> 3.3.6'
