@@ -2,9 +2,17 @@
   <h1><%= t('gallery.title')%></h1>
   <% @photos.each do |p| %>
   <div class="col-md-3 col-xs-3" style="padding:3px;" align="center">
-    <a href="<%= p.photo_url %>" data-toggle="lightbox" data-title="<%= p.tag %>"/>
-    <%= image_tag p.photo.thumb.url, style: "width:100%;height:auto;" %></a>
-    <%= raw "<br/>#{p.tag}" if p.tag? %></span>
+    <a href="<%= p.photo_url %>" data-toggle="lightbox" data-title="<%= p.tag %>"> <%= image_tag p.photo.thumb.url, style: "width:100%;height:auto;" %></a>
+    <%= raw "
+    <br/>
+    #{p.tag}" if p.tag? %></span>
   </div>
   <% end %>
 </div>
+
+<script>
+  $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+  }); 
+</script>
