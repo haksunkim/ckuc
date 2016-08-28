@@ -15,48 +15,86 @@
   </div>
 </div>
 <div class="container">
-  <div class="col-md-12" align="center">
-    <h1 class="page-header"><%= t('home.title') %></h1>
+  <!--div class="col-md-12" align="center">
+  <h1 class="page-header"><%= t('home.title') %></h1>
   </div>
   <div class="col-md-12" align="center">
-    <h3><%= t('home.subtitle') %></h3></br>
-  </div>
+  <h3><%= t('home.subtitle') %></h3></br>
+  </div-->
   <div class="col-md-8 col-md-offset-2">
     <div class="row">
-      <div class="col-md-12">
-        <!-- Nav tabs -->
-        <div class="card">
-          <ul class="nav nav-tabs" role="tablist">
-            <% if @item_count >= 1 %>
-            <li role="presentation" class="active">
-              <a href="#sub_item1" aria-controls="sub_item1" role="tab" data-toggle="tab"><%= t('home.tab.item1.title') %></a>
-            </li>
-            <% end %>
-            <% if @item_count > 1 %>
-            <% for i in 2..@item_count %>
-            <li role="presentation">
-              <a href="#sub_item<%= i %>" aria-controls="sub_item<%= i %>" role="tab" data-toggle="tab"><%= t("home.tab.item#{i}.title") %></a>
-            </li>
-            <% end %>
-            <% end %>
-          </ul>
-
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <% if @item_count >= 1 %>
-            <div role="tabpanel" class="tab-pane active" id="sub_item1">
-              <%= raw(t('home.tab.item1.content')) %>
-            </div>
-            <% end %>
-            <% if @item_count > 1 %>
-              <% for i in 2..@item_count %>
-              <div role="tabpanel" class="tab-pane" id="sub_item<%= i %>">
-                <%= raw(t("home.tab.item#{i}.content")) %>
-              </div>
-              <% end %>
-            <% end %>
+      <div class="col-md-12 col-lg-12">
+        <div id="card-row" class="col-md-12 col-lg-12">
+          <div class="col-md-5 panel">
+            <h1><%= t('home.tab.item1.title')%></h1>
+          </div>
+          <div class="col-md-7 panel">
+            <p><%= raw(t('home.tab.item1.content')) %></p>
           </div>
         </div>
+        <div class="col-md-12 col-lg-12" id="card-row">
+          <div class="col-md-2 panel" style="background-color:#6A4E77;color:white;">
+            <h1><%= t('home.tab.item2.title') %></h1>
+          </div>
+          <div class="col-md-7 panel" style="background-color:#72587E;color:white;">
+            <p style="font-size:1.5em;"><%= raw(t('home.tab.item2.content')) %></p>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-12" id="card-row">
+          <div class="col-md-4 col-lg-4 panel" style="background-color:#5B4565;color:white;">
+            <h2>EVENT 1</h2>
+            <p class="event">event 1</p>
+          </div>
+          <div class="col-md-4 col-lg-4 panel" style="background-color:#72587E;color:white;">
+            <h2>EVENT 2</h2>
+            <p class="event">event 2</p>
+          </div>
+          <div class="col-md-4 col-lg-4 panel" style="background-color:#846D8D;color:white;">
+            <h2>EVENT 3</h2>
+            <p class="event">event 3</p>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-12" id="card-row">
+          <div class="col-md-7 col-lg-7 panel" style="background-color:#E95533;color:white;">
+            <h2 style="text-align:left;"><%= t('home.tab.item3.title')%></h2>
+            <p class="event" sylte="text-align:left;"><%= raw(t('home.tab.item3.content')) %></p>
+          </div>
+          <div class="col-md-5 col-lg-5 panel" style="background-color:#EF6E54;color:white;">
+            <h2><%= t('home.tab.item4.title')%></h2>
+            <p class="event" style="font-size:3em;"><%= icon('youtube-square') %></p>
+          </div>
+        </div>
+        <!-- Nav tabs -->
+        <!--div class="card">
+        <ul class="nav nav-tabs" role="tablist">
+        <% if @item_count >= 1 %>
+        <li role="presentation" class="active">
+        <a href="#sub_item1" aria-controls="sub_item1" role="tab" data-toggle="tab"><%= t('home.tab.item1.title') %></a>
+        </li>
+        <% end %>
+        <% if @item_count > 1 %>
+        <% for i in 2..@item_count %>
+        <li role="presentation">
+        <a href="#sub_item<%= i %>" aria-controls="sub_item<%= i %>" role="tab" data-toggle="tab"><%= t("home.tab.item#{i}.title") %></a>
+        </li>
+        <% end %>
+        <% end %>
+        </ul>
+        <div class="tab-content">
+        <% if @item_count >= 1 %>
+        <div role="tabpanel" class="tab-pane active" id="sub_item1">
+        <%= raw(t('home.tab.item1.content')) %>
+        </div>
+        <% end %>
+        <% if @item_count > 1 %>
+        <% for i in 2..@item_count %>
+        <div role="tabpanel" class="tab-pane" id="sub_item<%= i %>">
+        <%= raw(t("home.tab.item#{i}.content")) %>
+        </div>
+        <% end %>
+        <% end %>
+        </div>
+        </div-->
       </div>
     </div>
   </div>
