@@ -23,8 +23,23 @@
  @import "lightbox-bootstrap";
  @import "common";
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   padding-top:50px;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
   font-family: 'Nanum Gothic', sans-serif;
 }
 
@@ -54,6 +69,10 @@ body {
   }
 }
 .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: #34495E;
   color:#ffffff;
   font-size:1.1em;
