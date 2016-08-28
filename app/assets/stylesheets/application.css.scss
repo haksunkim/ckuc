@@ -188,15 +188,15 @@ body {
 }
 
 #card-row {
-    display: table;
+  overflow: hidden; 
 }
 
 #card-row .panel {
-  float: none;
-  display: table-cell;
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
   border-radius: 0;
   padding-top: 40px;
-  padding-bottom: 60px;
+  //padding-bottom: 60px;
   vertical-align:top;
   h1 {
     padding-left: 15px;
@@ -219,6 +219,7 @@ body {
   p {
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 60px;
     margin:0;    
   }
   .event {
