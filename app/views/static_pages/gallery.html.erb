@@ -1,13 +1,15 @@
 <div class="container">
-  <h1><%= t('gallery.title')%></h1>
-  <% @photos.each do |p| %>
-  <div class="col-md-3 col-xs-3" style="padding:3px;" align="center">
-    <a href="<%= p.photo_url %>" data-toggle="lightbox" data-title="<%= p.tag %>"> <%= image_tag p.photo.thumb.url, style: "width:100%;height:auto;" %></a>
-    <%= raw "
-    <br/>
-    #{p.tag}" if p.tag? %></span>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-xs-12">
+    <h1><%= t('gallery.title')%></h1>
+    <% @photos.each do |p| %>
+    <div class="col-md-3 col-xs-3" style="padding:3px;" align="center">
+      <a href="<%= p.photo_url %>" data-toggle="lightbox" data-title="<%= p.tag %>"> <%= image_tag p.photo.thumb.url, style: "width:100%;height:auto;" %></a>
+      <%= raw "
+      <br/>
+      #{p.tag}" if p.tag? %></span>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 
 <script>
