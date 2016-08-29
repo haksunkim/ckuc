@@ -196,11 +196,11 @@ body {
   padding-bottom: 99999px;
   border-radius: 0;
   padding-top: 40px;
-  //padding-bottom: 60px;
   vertical-align:top;
   h1 {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 60px;
     margin:0px;
     font-size: 3em;
     font-weight: bold;
@@ -210,6 +210,7 @@ body {
   h2 {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 60px;
     margin: 0px;
     font-size: 2.5em;
     font-weight: bold;
@@ -220,7 +221,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 60px;
-    margin:0;    
+    margin:0;
   }
   .event {
     padding-top: 20px;
