@@ -1,12 +1,12 @@
 class StaticPagesController < ApplicationController
   def home
     locale = params[:locale] || I18n.default_locale
-    @item_count = Translation.where("locale = ? AND key LIKE ? AND key LIKE ?", locale, "home.tab%", "%title").count
+    @item_count = Translation.where("locale = ? AND translations.key LIKE ? AND translations.key LIKE ?", locale, "hometab%", "%title").count
   end
 
   def about    
     locale = params[:locale] || I18n.default_locale
-    @item_count = Translation.where("locale = ? AND key LIKE ? AND key LIKE ?", locale, "about.list%", "%title").count
+    @item_count = Translation.where("locale = ? AND translations.key LIKE ? AND translations.key LIKE ?", locale, "about.list%", "%title").count
   end
 
   def contact

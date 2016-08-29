@@ -8,7 +8,7 @@ class TranslationsController < ApplicationController
   
   def index
     if params.key?("key")
-      @translations = Translation.where("locale = ? AND key LIKE ?", @locale, params[:key]+'%')
+      @translations = Translation.where("locale = ? AND translations.key LIKE ?", @locale, params[:key]+'%')
     else
       @translations = Translation.locale(@locale)
     end
