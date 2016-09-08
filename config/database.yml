@@ -7,9 +7,9 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  username: root
-  password: hs202424
-  host: 10.1.60.7
+  username: ckuc
+  password: Amkor123!
+  host: 172.30.185.89
   port: 3306
 
 development:
