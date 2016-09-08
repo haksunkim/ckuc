@@ -9,7 +9,7 @@ default: &default
   encoding: utf8
   username: ckuc
   password: Amkor123!
-  host: 172.30.185.89
+  host: 172.30.185.31
   port: 3306
 
 development:
